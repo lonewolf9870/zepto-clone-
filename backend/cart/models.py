@@ -13,4 +13,4 @@ class Cart(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.customer.customerName} - {self.item_name} x{self.quantity}"
+        return f"{self.customerId} - {self.item_name} x{self.quantity}"

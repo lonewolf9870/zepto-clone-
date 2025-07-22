@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import LoginTable
-class LoginSerializer(serializers.Serializer):
+class LoginSerializer(serializers.ModelSerializer):
     class Meta:
-        model = LoginTable;
-        fields = ['mobile','password']
+        model = LoginTable
+        fields = ['CustomerName','password','customerId']

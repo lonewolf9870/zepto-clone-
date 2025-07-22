@@ -9,12 +9,11 @@ class LoginView(APIView):
         serializer = LoginSerializer(data=request.data)
         
         if serializer.is_valid():
-            mobile = serializer.validated_data['mobile']
+            CustomerName = serializer.validated_data['CustomerName']
             password = serializer.validated_data['password']
-
             try:
-                user = LoginTable.objects.get(mobile=mobile, password=password)
-                return Response({'message': 'Login successful', 'user_id': user.id})
+                user = LoginTable.objects.get(CustomerName=CustomerName, password=password)
+                return Response({'message': 'Login successful', 'user_id': user.customerId})
             except LoginTable.DoesNotExist:
                 return Response({'error': 'Invalid credentials'}, status=401)
         

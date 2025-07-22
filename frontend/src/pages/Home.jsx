@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React , {useContext} from 'react';
+import { CustomerContext } from '../Context/CustomerContext';
 function Home(){
+    const {CustomerName,setCustomerName} = useContext(CustomerContext);    
     return(
-        <h1>Hello world</h1>
+        <h1>Hello {CustomerName}</h1>
     )
 }
 

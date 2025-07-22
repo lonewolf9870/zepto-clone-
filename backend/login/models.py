@@ -11,7 +11,7 @@ class LoginTable(models.Model):
     )
     password = models.CharField(max_length=255);
 
-def __str__(self):
-    return f"{self.customerName} ({self.customerId})"
+    def __str__(self):
+        return f"{self.CustomerName} -- ({self.customerId})"
 
 
